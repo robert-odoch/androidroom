@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CourseStatistics">
+
+    <TextView
+        android:id="@+id/course_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/course_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scores_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/course_title"
+        tools:listitem="@layout/score_item" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/statistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scores_recyclerview">
+
+        <TextView
+            android:id="@+id/high_score_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="8dp"
+            android:text="Hgh"
+            app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintStart_toStartOf="@id/statistics"
+            app:layout_constraintTop_toTopOf="@id/statistics" />
+
+        <TextView
+            android:id="@+id/low_score_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="8dp"
+            android:text="Low"
+            app:layout_constraintRight_toLeftOf="@id/barrier"
+            app:layout_constraintStart_toStartOf="@id/statistics"
+            app:layout_constraintTop_toBottomOf="@+id/high_score_label" />
+
+        <TextView
+            android:id="@+id/average_score_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="8dp"
+            android:text="Avg"
+            app:layout_constraintRight_toLeftOf="@id/barrier"
+            app:layout_constraintStart_toStartOf="@id/statistics"
+            app:layout_constraintTop_toBottomOf="@+id/low_score_label" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="high_score_label,low_score_label,average_score_label" />
+
+        <TextView
+            android:id="@+id/quiz_one_high"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="70"
+            app:layout_constraintRight_toLeftOf="@id/barrier2"
+            app:layout_constraintStart_toEndOf="@+id/barrier"
+            app:layout_constraintTop_toTopOf="@id/statistics" />
+
+        <TextView
+            android:id="@+id/quiz_one_low"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintRight_toLeftOf="@id/barrier2"
+            app:layout_constraintTop_toBottomOf="@id/quiz_one_high" />
+
+        <TextView
+            android:id="@+id/quiz_one_avg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintRight_toLeftOf="@id/barrier2"
+            app:layout_constraintTop_toBottomOf="@id/quiz_one_low" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="quiz_one_high,quiz_one_low,quiz_one_avg" />
+
+
+        <TextView
+            android:id="@+id/quiz_two_high"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="70"
+            app:layout_constraintRight_toLeftOf="@id/barrier3"
+            app:layout_constraintStart_toEndOf="@+id/barrier2"
+            app:layout_constraintTop_toTopOf="@id/statistics" />
+
+        <TextView
+            android:id="@+id/quiz_two_low"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier2"
+            app:layout_constraintRight_toLeftOf="@id/barrier3"
+            app:layout_constraintTop_toBottomOf="@id/quiz_two_high" />
+
+        <TextView
+            android:id="@+id/quiz_two_avg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier2"
+            app:layout_constraintRight_toLeftOf="@id/barrier3"
+            app:layout_constraintTop_toBottomOf="@id/quiz_two_low" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="quiz_two_high,quiz_two_low,quiz_two_avg" />
+
+        <TextView
+            android:id="@+id/quiz_three_high"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="70"
+            app:layout_constraintRight_toLeftOf="@id/barrier4"
+            app:layout_constraintStart_toEndOf="@+id/barrier3"
+            app:layout_constraintTop_toTopOf="@id/statistics" />
+
+        <TextView
+            android:id="@+id/quiz_three_low"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier3"
+            app:layout_constraintRight_toLeftOf="@id/barrier4"
+            app:layout_constraintTop_toBottomOf="@id/quiz_three_high" />
+
+        <TextView
+            android:id="@+id/quiz_three_avg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier3"
+            app:layout_constraintRight_toLeftOf="@id/barrier4"
+            app:layout_constraintTop_toBottomOf="@id/quiz_three_low" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="quiz_three_high,quiz_three_low,quiz_three_avg" />
+
+        <TextView
+            android:id="@+id/quiz_four_high"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="70"
+            app:layout_constraintRight_toLeftOf="@id/barrier5"
+            app:layout_constraintStart_toEndOf="@+id/barrier4"
+            app:layout_constraintTop_toTopOf="@id/statistics" />
+
+        <TextView
+            android:id="@+id/quiz_four_low"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier4"
+            app:layout_constraintRight_toLeftOf="@id/barrier5"
+            app:layout_constraintTop_toBottomOf="@id/quiz_four_high" />
+
+        <TextView
+            android:id="@+id/quiz_four_avg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier4"
+            app:layout_constraintRight_toLeftOf="@id/barrier5"
+            app:layout_constraintTop_toBottomOf="@id/quiz_four_low" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="quiz_four_high,quiz_four_low,quiz_four_avg" />
+
+        <TextView
+            android:id="@+id/quiz_five_high"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="70"
+            app:layout_constraintRight_toLeftOf="@id/barrier6"
+            app:layout_constraintStart_toEndOf="@+id/barrier5"
+            app:layout_constraintTop_toTopOf="@id/statistics" />
+
+        <TextView
+            android:id="@+id/quiz_five_low"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier5"
+            app:layout_constraintRight_toLeftOf="@id/barrier6"
+            app:layout_constraintTop_toBottomOf="@id/quiz_five_high" />
+
+        <TextView
+            android:id="@+id/quiz_five_avg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="78"
+            app:layout_constraintStart_toStartOf="@id/barrier5"
+            app:layout_constraintRight_toLeftOf="@id/barrier6"
+            app:layout_constraintTop_toBottomOf="@id/quiz_five_low" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="quiz_five_high,quiz_five_low,quiz_five_avg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
